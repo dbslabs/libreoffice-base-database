@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a Database in LibreOffice Base - Lab Handout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: #ffffff;
+            color: #333333;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            color: #111111;
+        }
+        /* Style focus indicator for contenteditable blocks */
+        [contenteditable="true"]:focus {
+            outline: 2px solid #005fcc;
+            outline-offset: 4px;
+            background-color: #f4f8fb;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #dddddd;
+            margin: 30px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 12px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        blockquote {
+            background-color: #f9f9f9;
+            border-left: 4px solid #005fcc;
+            margin: 15px 0;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 contenteditable="true">Creating Your First Database in LibreOffice Base</h1>
+    <p contenteditable="true"><strong>Lab Handout &amp; Guide</strong><br><em>Before You Begin: Helpful Keyboard Shortcuts</em></p>
+
+    <table>
+        <tr>
+            <th contenteditable="true">Action</th>
+            <th contenteditable="true">Keyboard Shortcut</th>
+        </tr>
+        <tr>
+            <td contenteditable="true">Move forward between fields or buttons</td>
+            <td contenteditable="true">Tab</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Move backward between fields or buttons</td>
+            <td contenteditable="true">Shift + Tab</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Open a dropdown menu</td>
+            <td contenteditable="true">Alt + Down Arrow</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Confirm a dialog button (OK, Next, Finish)</td>
+            <td contenteditable="true">Enter</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">Cancel or close a dialog</td>
+            <td contenteditable="true">Escape</td>
+        </tr>
+    </table>
+    <hr>
+
+    <h2 contenteditable="true">Part 1: Create the Database and Build the Animals Table</h2>
+
+    <h3 contenteditable="true">Step 1: Create and Save a New Database File</h3>
+    <ol>
+        <li contenteditable="true">Open LibreOffice from your Start Menu.</li>
+        <li contenteditable="true">Press Alt + F to open the File menu, press Right Arrow to expand New, and select Database (or press D on the main LibreOffice start screen).</li>
+        <li contenteditable="true">The Database Wizard dialog opens on the Select database step. Ensure the radio button Create a new database is selected.</li>
+        <li contenteditable="true">Press Alt + N (or Tab to Next and press Enter).</li>
+        <li contenteditable="true">On the Save and proceed step: Ensure Yes, register the database for me is selected.</li>
+        <li contenteditable="true">Press Tab once to move to the checkboxes and ensure Open the database for editing is checked (Spacebar toggles checkboxes).</li>
+        <li contenteditable="true">Press Alt + F (or Tab to Finish and press Enter).</li>
+        <li contenteditable="true">In the Save As dialog, type Animal_Rescue_Shelter in the File name box, select your class folder, and press Enter.</li>
+        <li contenteditable="true">The main LibreOffice Base window opens. Focus defaults to the Database pane on the left, where Tables is selected (Alt + A jumps directly to Tables at any time).</li>
+    </ol>
+
+    <h3 contenteditable="true">Step 2: Open Table Design View</h3>
+    <ol>
+        <li contenteditable="true">With Tables selected in the left pane, press Tab once to move into the Tasks pane.</li>
+        <li contenteditable="true">Use the Up Arrow or Down Arrow keys to highlight Create Table in Design View... and press Enter.</li>
+        <li contenteditable="true">The Table Design window opens. Your cursor is placed inside the first row under the Field Name column.</li>
+    </ol>
+
+    <h3 contenteditable="true">Step 3: Define Your Table Fields and Data Types</h3>
+    <p contenteditable="true">You will create five columns (fields) for your table. Type each field name, press Tab to move to Field Type, select the type, and press Down Arrow to move to the next row:</p>
+    <ul>
+        <li contenteditable="true"><strong>Row 1 (Unique ID):</strong> In Field Name, type AnimalID and press Tab. In Field Type, press Alt + Down Arrow, select Integer [INTEGER], and press Enter. Press Down Arrow to move to Row 2.</li>
+        <li contenteditable="true"><strong>Row 2 (Animal Name):</strong> In Field Name, type AnimalName and press Tab. Leave Field Type set to Text [VARCHAR]. Press Down Arrow to move to Row 3.</li>
+        <li contenteditable="true"><strong>Row 3 (Species):</strong> In Field Name, type Species and press Tab. Leave Field Type set to Text [VARCHAR]. Press Down Arrow to move to Row 4.</li>
+        <li contenteditable="true"><strong>Row 4 (Age in Years):</strong> In Field Name, type Age and press Tab. In Field Type, press Alt + Down Arrow, select Integer [INTEGER], and press Enter. Press Down Arrow to move to Row 5.</li>
+        <li contenteditable="true"><strong>Row 5 (Adoption Status):</strong> In Field Name, type Status and press Tab. Leave Field Type set to Text [VARCHAR]. (This field will store whether an animal is Available or Adopted.)</li>
+    </ul>
+
+    <h3 contenteditable="true">Step 4: Set the Primary Key and AutoValue</h3>
+    <ol>
+        <li contenteditable="true">Every database table needs a Primary Key to give each animal a unique ID number. Press Up Arrow four times until your cursor is back on Row 1 (AnimalID).</li>
+        <li contenteditable="true">Press Shift + Spacebar to select the entire row.</li>
+        <li contenteditable="true">Open the context menu by pressing Shift + F10 (or the Application/Menu key on your keyboard).</li>
+        <li contenteditable="true">Use Down Arrow to select Primary Key and press Enter.</li>
+        <li contenteditable="true">To make LibreOffice number each animal automatically, press F6 until focus moves into the Field Properties pane at the bottom of the window.</li>
+        <li contenteditable="true">Press Tab to locate the AutoValue dropdown, press Alt + Down Arrow, select Yes, and press Enter.</li>
+    </ol>
+
+    <h3 contenteditable="true">Step 5: Save and Close the Table Structure</h3>
+    <ol>
+        <li contenteditable="true">Press Ctrl + S to save the table.</li>
+        <li contenteditable="true">In the Save As dialog, type Animals as the Table Name and press Enter.</li>
+        <li contenteditable="true">Press Ctrl + W to close the Table Design window and return to the main database window.</li>
+    </ol>
+
+    <h3 contenteditable="true">Step 6: Enter Four Animal Records into Your Table</h3>
+    <ol>
+        <li contenteditable="true">In the main Base window, ensure Tables is selected (Alt + A). Press Tab twice to move into the Tables list at the bottom right, highlight Animals, and press Enter.</li>
+        <li contenteditable="true">The Table Data View grid opens. Notice the first column (AnimalID) reads AutoField—skip it, as LibreOffice fills it in automatically.</li>
+        <li contenteditable="true">Press Tab to move to AnimalName and enter your first record: Type Bella, press Tab, type Dog, press Tab, type 3, press Tab, type Available, and press Tab.</li>
+        <li contenteditable="true">Pressing Tab after the last column automatically saves Row 1 and moves your cursor to Row 2. Enter the second record: Press Tab past AutoField, type Oliver, press Tab, type Cat, press Tab, type 2, press Tab, type Adopted, and press Tab.</li>
+        <li contenteditable="true">Enter the third record in Row 3: Press Tab past AutoField, type Max, press Tab, type Dog, press Tab, type 5, press Tab, type Available, and press Tab.</li>
+        <li contenteditable="true">Enter the fourth record in Row 4: Press Tab past AutoField, type Luna, press Tab, type Rabbit, press Tab, type 1, press Tab, type Available, and press Tab.</li>
+        <li contenteditable="true">Press Ctrl + S to save your data, then press Ctrl + W to close the table view. Press Ctrl + S once more in the main Base window to save the entire .odb database file.</li>
+    </ol>
+    <hr>
+
+    <h2 contenteditable="true">Part 2: Querying the Database for Available Animals</h2>
+    <p contenteditable="true">Now you will create a query to filter your shelter records so that it only shows animals whose Status is Available.</p>
+
+    <h3 contenteditable="true">Step 1: Launch the Query Wizard</h3>
+    <ol>
+        <li contenteditable="true">In the main LibreOffice Base window, select Queries in the left Database pane by pressing Alt + Q (or use Up/Down Arrow until Queries is highlighted).</li>
+        <li contenteditable="true">Press Tab once to move into the Tasks pane.</li>
+        <li contenteditable="true">Highlight Use Wizard to Create Query... and press Enter. The Query Wizard opens on Step 1 (Field selection).</li>
+    </ol>
+
+    <h3 contenteditable="true">Step 2: Choose Which Fields to Display</h3>
+    <ol>
+        <li contenteditable="true">Focus starts in the Tables dropdown. Ensure Table: Animals is selected (use Alt + Down Arrow if you need to change it).</li>
+        <li contenteditable="true">Press Tab to move to the Available fields list.</li>
+        <li contenteditable="true">Highlight AnimalName, press Tab once to reach the &gt; (Move Single) button, and press Enter.</li>
+        <li contenteditable="true">Repeat this process to move Species, Age, and Status into the Fields in the Query list.</li>
+        <li contenteditable="true">Press Alt + N (or Tab to Next and press Enter) to move to Step 2 (Sorting order).</li>
+    </ol>
+
+    <h3 contenteditable="true">Step 3: Sort Your Results Alphabetically by Name</h3>
+    <ol>
+        <li contenteditable="true">Focus starts in the Sort by dropdown. Press Alt + Down Arrow, select Animals.AnimalName, and press Enter.</li>
+        <li contenteditable="true">Press Tab once to confirm the Ascending radio button is selected (A to Z).</li>
+        <li contenteditable="true">Press Alt + N to move to Step 3 (Search conditions).</li>
+    </ol>
+
+    <h3 contenteditable="true">Step 4: Filter for Available Animals Only</h3>
+    <p contenteditable="true">This is where you tell the database to hide adopted animals and show only the ones ready for a home:</p>
+    <ul>
+        <li contenteditable="true">Ensure the radio button Match all of the following is selected.</li>
+        <li contenteditable="true">Press Tab to move to the Fields dropdown, press Alt + Down Arrow, and select Animals.Status.</li>
+        <li contenteditable="true">Press Tab to move to the Condition dropdown and leave it set to is equal to.</li>
+        <li contenteditable="true">Press Tab to move to the Value box and type Available (make sure the spelling matches how you typed it in your table).</li>
+        <li contenteditable="true">Press Alt + N repeatedly until you reach the final step (Overview).</li>
+    </ul>
+
+    <h3 contenteditable="true">Step 5: Name and Run Your Query</h3>
+    <ol>
+        <li contenteditable="true">On the Overview step, focus starts in the Name of the query box. Type Available_Animals_Query.</li>
+        <li contenteditable="true">Ensure the Display Query radio button is selected.</li>
+        <li contenteditable="true">Press Alt + F (or Tab to Finish and press Enter).</li>
+        <li contenteditable="true">A read-only results grid opens, listing only Bella, Luna, and Max (leaving out Oliver, who is marked Adopted). Use the Arrow keys to read through the rows and columns.</li>
+        <li contenteditable="true">Press Ctrl + W to close the query results, then press Ctrl + S in the main Base window to save your database file.</li>
+    </ol>
+    <hr>
+
+    <h2 contenteditable="true">Quick Troubleshooting &amp; Navigation Reminder</h2>
+    <ul>
+        <li contenteditable="true"><strong>Switch to Tables:</strong> Alt + A</li>
+        <li contenteditable="true"><strong>Switch to Queries:</strong> Alt + Q</li>
+        <li contenteditable="true"><strong>Lost Focus in Table Design?</strong> Press F6 to cycle cleanly between the top grid (Field Name / Field Type), the bottom pane (Field Properties), and the toolbar.</li>
+        <li contenteditable="true"><strong>Screen Reader Stops Announcing Grid Cells?</strong> Press Insert + Escape (in JAWS/Fusion) or NVDA + F5 (in NVDA) to refresh the virtual buffer, or press F2 to enter active cell-editing mode.</li>
+    </ul>
+
+</body>
+</html>
